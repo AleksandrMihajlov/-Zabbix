@@ -37,4 +37,27 @@ sudo systemctl enable zabbix-web-service
 ![alt text](https://github.com/AleksandrMihajlov/Zabbix-hw-02/blob/main/1.png)  
 ![alt text](https://github.com/AleksandrMihajlov/Zabbix-hw-02/blob/main/1.1.png)  
   
-**Задание2**
+**Задание2**  
+  
+*Повторяем на ПК где необходимо установить клиенты*  
+*Скачиваем, распаковываем и обновляем репозиторий.*  
+sudo wget https://repo.zabbix.com/zabbix/7.0/debian-arm64/pool/main/z/zabbix-release/zabbix-release_7.0-2+debian12_all.deb  
+sudo dpkg -i zabbix-release_7.0-2+debian12_all.deb  
+sudo apt update  
+  
+*Устанавливаем агент Zabbix*  
+sudo apt install zabbix-agent  
+  
+*В файле /etc/zabbix/zabbix_agentd.conf находим Server и меняем ip на навего сервера Zabbix*  
+sudo nano /etc/zabbix/zabbix_agentd.conf  
+
+*Перезагружаем сервис и устанавливаем автозапуск*  
+systemctl restart zabbix-agent  
+systemctl enable zabbix-agent  
+  
+![alt text](https://github.com/AleksandrMihajlov/Zabbix-hw-02/blob/main/2.png)  
+![alt text](https://github.com/AleksandrMihajlov/Zabbix-hw-02/blob/main/2.1.png)  
+![alt text](https://github.com/AleksandrMihajlov/Zabbix-hw-02/blob/main/2.2.png)  
+![alt text](https://github.com/AleksandrMihajlov/Zabbix-hw-02/blob/main/2.3.png)  
+![alt text](https://github.com/AleksandrMihajlov/Zabbix-hw-02/blob/main/2.4.png)  
+![alt text](https://github.com/AleksandrMihajlov/Zabbix-hw-02/blob/main/2.5.png)
